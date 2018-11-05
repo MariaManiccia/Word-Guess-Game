@@ -1,6 +1,6 @@
 //  My variables
 
-var wordBank = ["red", "blue", "yellow"]
+var wordBank = ["beyonce", "jay", "blue", "rumi", "sir"]
 var wins = 0;
 var loss = 0;
 var wrongLetter = [];
