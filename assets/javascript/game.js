@@ -23,7 +23,6 @@ function startGame(){
 // doesn't work ...prints those "_"s !!!
 console.log(underScores);
 Document.getElementById('spaceHolders').textContent = underScores;
-}
 
 // start new
 wrongLetter = [];
@@ -32,6 +31,20 @@ guessesLeft = 10;
 // doesnt work AGAIN!!! print on browser
 console.log(guessesLeft);
 Document.getElementById(guessLeft).textContent = guessesLeft;
+   
+}
+
+// keyboard
+document.onkeyup = function(event){
+// registers the key pressed
+    userGuesses = event.key;
+    console.log(userGuesses);
+
+    if(userGuesses === choosenWord){
+        console.log('yes');
+    }
+}
+
 
 
 
