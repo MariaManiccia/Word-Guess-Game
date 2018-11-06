@@ -16,14 +16,26 @@ function startGame(){
    choosenWord = wordBank[Math.floor(Math.random() * wordBank.length)];
     console.log(choosenWord);
 
-//pushes a '_' for every letter of the choosenWord
+// pushes a '_' for every letter of the choosenWord
     for(var i=0; i < choosenWord.length; i++){
     underScores.push('_');
      }
-//prints those "_"s
+// doesn't work ...prints those "_"s !!!
 console.log(underScores);
 Document.getElementById('spaceHolders').textContent = underScores;
 }
+
+// start new
+wrongLetter = [];
+guessesLeft = 10;
+
+// doesnt work AGAIN!!! print on browser
+console.log(guessesLeft);
+Document.getElementById(guessLeft).textContent = guessesLeft;
+
+
+
+
 
 
 // Main 
