@@ -1,56 +1,44 @@
-//  My variables
+// My Array
+const words = ['red', 'yellow', 'blue','purple'];
 
-var wordBank = ["beyonce", "jay", "blue", "rumi", "sir"]
-var wins = 0;
-var loss = 0;
-var wrongLetter = [];
-var guessesLeft = 9;
-var underScores = [];
-var userGuesses = [];
-var choosenWord;
+// Chooses random word
+let randNumb = Math.floor(Math.random() * words.length);
+let choosenWord = words[randNumb];
+let underScore = [];
+let rightWord = [];
+let wrongWord = [];
 
-// My functions
+console.log(choosenWord);
 
-function startGame(){
-    // picks random word
-   choosenWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-    console.log(choosenWord);
-
-// pushes a '_' for every letter of the choosenWord
-    for(var i=0; i < choosenWord.length; i++){
-    underScores.push('_');
-     }
-// doesn't work ...prints those "_"s !!!
-console.log(underScores);
-Document.getElementById('spaceHolders').textContent = underScores;
-
-// start new
-wrongLetter = [];
-guessesLeft = 10;
-
-// doesnt work AGAIN!!! print on browser
-console.log(guessesLeft);
-Document.getElementById(guessLeft).textContent = guessesLeft;
-   
+// Creating the underscores
+let underScores = () => {
+    for(let i = 0; i < choosenWord.length; i++){
+underScore.push('_');
+    }
+    return underScore;
 }
 
-// keyboard
-document.onkeyup = function(event){
-// registers the key pressed
-    userGuesses = event.key;
-    console.log(userGuesses);
+console.log(underScores());
 
-    if(userGuesses === choosenWord){
-        console.log('yes');
+// Get user's guess
+document.addEventListener('keypress', (event) => {
+let keycode = event.keyCode;
+let keyWord = String.fromCharCode(keycode);
+
+// if the letter is right
+if(choosenWord.indexOf(keyWord) > -1){
+    
+    // add it to the right words array
+    rightWord.push(keyWord);
+    // replace the underscore
+    underScore[choosenWord.indexOf(keyWord)] = keyWord;
+    // see if word matches correct word
+    if(underScore.join('') == choosenWord) {
+        alert('You Won!!');
     }
 }
 
+});
 
 
 
-
-
-
-// Main 
-
-startGame();
