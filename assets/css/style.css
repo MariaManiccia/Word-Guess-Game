@@ -1,36 +1,54 @@
 
 
-.header{
-    margin-top: 0;
+body{
+    background-image: url("C:/Word-Guess-Game/assets/images/backgroundMario.jpg");
+     
+}
+
+.leftContainer{
+    background-color: #f8eded;
+    width: 300px;
+    float: left;
+    height: 300px;
+    line-height: 1.5;
+    margin-top: 10%;
+    margin-left: 3%;
+    font-family: Righteous, sans-serif;
+    color: #6b7482;
+    border: #d1cece solid 3px;
     text-align: center;
-    background-color: #4d8082;
-    color: whitesmoke;
-    font-family: 'Righteous', cursive;
-    font-size: x-large
+    font-size: large;
+    padding-top: 5px;
+}
+h1{
+    font-size: 40px;
+    font-family: Righteous, sans-serif;
+    color: #6b7482;
+    text-align: center;
+    margin-top: 1%;
 }
 
 #keyStart{
+    font-size: 20px;
+    font-family: Righteous, sans-serif;
+    color: #6b7482;
     text-align: center;
-    color: #4d8082;
-    font-family: Righteous, cursive;
-    font-size: larger;
-    padding: 5%;
-
+   
+    
 }
 
-.container{
+.rightContainer{
+    background-color: #f8eded;
+    width: 300px;
+    float: right;
+    height: 300px;
+    line-height: 1.5;
+    margin-top: 10%;
+    margin-right: 5%;
+    border: #d1cece solid 3px;
     text-align: center;
-    font-family: Righteous, cursive;
-    color: whitesmoke;
-    background-color: #b39595;
-    width: 50%;
-    margin-left: 25%;
-}
-
-footer{
-    color: #4d8082;
-    font-family: Righteous, cursive;
-    text-align: center;
-    margin-bottom: 0;
-    padding: 25px;
+    font-family: Righteous, sans-serif;
+    color: #6b7482;
+    font-size: large;
+    padding:5px;
 }

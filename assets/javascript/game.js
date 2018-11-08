@@ -1,44 +1,57 @@
-// My Array
-const words = ['red', 'yellow', 'blue','purple'];
 
-// Chooses random word
-let randNumb = Math.floor(Math.random() * words.length);
-let choosenWord = words[randNumb];
-let underScore = [];
-let rightWord = [];
-let wrongWord = [];
+// My Var
+var kingdoms = ["Cap", "Cascade", "Sand", "Lake", "Wooded", "Cloud", "Lost", "Metro", "Snow", "Seaside", "Luncheon", "Ruined", "Bowsers","Moon","DarkSide", "DarkerSide", "Mushroom"];
+var wins = 0;
+var loss = 0;
+var wrongLetter = [];
+var guessesLeft = 9;
+var underScores = [];
+var userGuesses = [];
+var choosenWord;
 
-console.log(choosenWord);
+// My functions
 
-// Creating the underscores
-let underScores = () => {
-    for(let i = 0; i < choosenWord.length; i++){
-underScore.push('_');
-    }
-    return underScore;
+function startGame(){
+    // picks random word
+   choosenWord = kingdoms[Math.floor(Math.random() * kingdoms.length)];
+    console.log(choosenWord);
+
+// pushes a '_' for every letter of the choosenWord
+    for(var i=0; i < choosenWord.length; i++){
+    underScores.push('_');
+     }
+// doesn't work ...prints those "_"s !!!
+console.log(underScores);
+document.getElementById('spaceHolders').textContent = underScores;
+
+// start new
+wrongLetter = [];
+guessesLeft = 10;
+
+// doesnt work AGAIN!!! print on browser
+console.log(guessesLeft);
+document.getElementById(guessLeft).textContent = guessesLeft;
+   
 }
 
-console.log(underScores());
+// keyboard
+document.onkeyup = function(event){
+// registers the key pressed
+    userGuesses = event.key;
+    console.log(userGuesses);
 
-// Get user's guess
-document.addEventListener('keypress', (event) => {
-let keycode = event.keyCode;
-let keyWord = String.fromCharCode(keycode);
-
-// if the letter is right
-if(choosenWord.indexOf(keyWord) > -1){
-    
-    // add it to the right words array
-    rightWord.push(keyWord);
-    // replace the underscore
-    underScore[choosenWord.indexOf(keyWord)] = keyWord;
-    // see if word matches correct word
-    if(underScore.join('') == choosenWord) {
-        alert('You Won!!');
+    if(userGuesses === choosenWord){
+        console.log('yes');
     }
 }
 
-});
 
 
+
+
+
+
+// Main 
+
+startGame();
 
