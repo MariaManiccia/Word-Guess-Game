@@ -41,6 +41,8 @@ document.getElementById('guessLeft').textContent = guessesLeft;
         wins++;
             alert("You guessed the kingdom!");
         document.getElementById('wins').textContent = wins;
+        startGame();
+        
         
         
         
@@ -49,6 +51,8 @@ document.getElementById('guessLeft').textContent = guessesLeft;
             loss++;
             alert("Try Again!");
             document.getElementById('loses').textContent = loss;
+            startGame();
+            
             
         }
         }
