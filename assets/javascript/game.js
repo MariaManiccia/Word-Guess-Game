@@ -33,7 +33,7 @@ document.getElementById('guessLeft').textContent = guessesLeft;
   
 }
 
-// if you won or lose
+// if you won or lost
 
     function winLose(){
 
@@ -66,7 +66,7 @@ document.onkeyup = function(event){
     userGuesses = event.key;
     
 
-    // does it exsist in the choosen word
+    //  if it exsists in the choosen word...
     if(choosenWord.indexOf(userGuesses) > -1){
 
         for(var i = 0; i < choosenWord.length; i++){
@@ -82,13 +82,18 @@ document.onkeyup = function(event){
         }
 
     }
-
+// if it doesnt then...
     else{
 wrongLetter.push(userGuesses);
+
 guessesLeft--;
+
 console.log(guessesLeft);
+
 document.getElementById('guessLeft').textContent = guessesLeft;
+
 console.log(wrongLetter);
+
 document.getElementById('wrongGuess').textContent = wrongLetter;
 winLose();
 
