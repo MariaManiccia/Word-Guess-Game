@@ -1,7 +1,7 @@
 
 
-body{
-    background-image: url("c:/Word-Guess-Game/assets/images/backgroundMario.JPG");
+#bgImage{
+    background-image: url("C:/Word-Guess-Game/assets/images/backgroundMario.JPG");
      
 }
 
@@ -20,6 +20,7 @@ body{
     font-size: large;
     padding-top: 5px;
 }
+
 h1{
     font-size: 40px;
     font-family: Righteous, sans-serif;
