@@ -33,24 +33,25 @@ document.getElementById('guessLeft').textContent = guessesLeft;
   
 }
 
+// if you won or lose
 
-function winLose(){
+    function winLose(){
 
-if(winCount === choosenWord.length){
-wins++;
-    alert("You guessed the kingdom!");
-document.getElementById('wins').textContent = wins;
-
-
-
-}
-else if (guessesLeft === 0){
-    loss++;
-    alert("Loser!");
-    document.getElementById('loses').textContent = loss;
-    
-}
-}
+        if(winCount === choosenWord.length){
+        wins++;
+            alert("You guessed the kingdom!");
+        document.getElementById('wins').textContent = wins;
+        
+        
+        
+        }
+        else if (guessesLeft === 0){
+            loss++;
+            alert("Try Again!");
+            document.getElementById('loses').textContent = loss;
+            
+        }
+        }
 
 
 
