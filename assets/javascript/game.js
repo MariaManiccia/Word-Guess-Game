@@ -3,10 +3,10 @@
 var kingdoms = ["cap", "cascade", "sand", "lake", "wooded", "cloud", "lost", "metro", "snow", "seaside", "luncheon", "ruined", "bowsers", "moon", "darkside", "darkerside", "mushroom"];
 var wins = 0;
 var loss = 0;
-var wrongLetter = [];
-var guessesLeft = [];
+var wrongLetter;
+var guessesLeft;
 var underScores;
-var userGuesses = [];
+var userGuesses;
 var choosenWord;
 var winCount = 0;
 
@@ -16,9 +16,11 @@ var winCount = 0;
 function startGame() {
 
     // make an empty array
+
     underScores = [];
     guessesLeft = 10;
     wrongLetter = [];
+    document.getElementById('wrongGuess').textContent = wrongLetter.join(" ");
     // picks random word
     choosenWord = kingdoms[Math.floor(Math.random() * kingdoms.length)];
     console.log(choosenWord);
@@ -44,6 +46,7 @@ function winLose() {
 
         wins++;
         alert("You guessed the kingdom!");
+        wrongLetter = [];
         document.getElementById('wins').textContent = wins;
         startGame();
 
@@ -55,7 +58,8 @@ function winLose() {
     else if (guessesLeft === 0) {
 
         loss++;
-        alert("Try Again!");
+        confirm("Want To Try Again?");
+        wrongLetter = [];
         document.getElementById('loses').textContent = loss;
         startGame();
 
@@ -72,9 +76,9 @@ document.onkeyup = function (event) {
     // registers the key pressed
     userGuesses = event.key;
 
-    
+
     //  if it exsists in the choosen word...
-    
+
     if (choosenWord.indexOf(userGuesses) > -1) {
 
         for (var i = 0; i < choosenWord.length; i++) {
@@ -84,14 +88,14 @@ document.onkeyup = function (event) {
                 underScores[i] = userGuesses;
 
                 document.getElementById('spaceHolders').textContent = underScores.join(" ");
-               
+
                 winCount++;
-            
+                winLose();
             }
-            
+
         }
-        
-        winLose();
+
+
 
     }
     // if it doesnt then...
@@ -106,12 +110,13 @@ document.onkeyup = function (event) {
 
         console.log(wrongLetter);
 
-        document.getElementById('wrongGuess').textContent = wrongLetter;
-    
+        document.getElementById('wrongGuess').textContent = wrongLetter.join(" ");
+
+        winLose();
 
     }
-    
-    winLose();
+
+
 }
 
 startGame();
