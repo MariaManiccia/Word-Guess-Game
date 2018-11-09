@@ -1,11 +1,11 @@
 
 // My Var
-var kingdoms = ["cap", "cascade", "sand", "lake", "wooded", "cloud", "lost", "metro", "snow", "seaside", "luncheon", "ruined", "bowsers","moon","darkside", "darkerside", "mushroom"];
+var kingdoms = ["cap", "cascade", "sand", "lake", "wooded", "cloud", "lost", "metro", "snow", "seaside", "luncheon", "ruined", "bowsers", "moon", "darkside", "darkerside", "mushroom"];
 var wins = 0;
 var loss = 0;
 var wrongLetter = [];
 var guessesLeft = [];
-var underScores = [];
+var underScores;
 var userGuesses = [];
 var choosenWord;
 var winCount = 0;
@@ -13,92 +13,105 @@ var winCount = 0;
 
 // My functions
 
-function startGame(){
-   
+function startGame() {
+
+    // make an empty array
+    underScores = [];
+    guessesLeft = 10;
+    wrongLetter = [];
     // picks random word
-   choosenWord = kingdoms[Math.floor(Math.random() * kingdoms.length)];
+    choosenWord = kingdoms[Math.floor(Math.random() * kingdoms.length)];
     console.log(choosenWord);
-// pushes a '_' for every letter of the choosenWord
-    for(var i=0; i < choosenWord.length; i++){
-    underScores.push('_');
-     }
-//prints those "_"s !!!
-document.getElementById('spaceHolders').textContent = underScores.join(" ");
-// start new
-wrongLetter = [];
-guessesLeft = 10;
-// print on browser
-console.log(guessesLeft);
-document.getElementById('guessLeft').textContent = guessesLeft;
-  
+    // pushes a '_' for every letter of the choosenWord
+    for (var i = 0; i < choosenWord.length; i++) {
+        underScores.push('_');
+    }
+    //prints those "_"s !!!
+    document.getElementById('spaceHolders').textContent = underScores.join(" ");
+
+
+    // print on browser
+    console.log(guessesLeft);
+    document.getElementById('guessLeft').textContent = guessesLeft;
+
 }
 
 // if you won or lost
 
-    function winLose(){
+function winLose() {
 
-        if(winCount === choosenWord.length){
+    if (winCount === choosenWord.length) {
+
         wins++;
-            alert("You guessed the kingdom!");
+        alert("You guessed the kingdom!");
         document.getElementById('wins').textContent = wins;
         startGame();
-        
-        
-        
-        
-        }
-        else if (guessesLeft === 0){
-            loss++;
-            alert("Try Again!");
-            document.getElementById('loses').textContent = loss;
-            startGame();
-            
-            
-        }
-        }
+
+
+
+
+
+    }
+    else if (guessesLeft === 0) {
+
+        loss++;
+        alert("Try Again!");
+        document.getElementById('loses').textContent = loss;
+        startGame();
+
+
+
+    }
+}
 
 
 
 // User Guesses
-document.onkeyup = function(event){
+document.onkeyup = function (event) {
 
     // registers the key pressed
     userGuesses = event.key;
+
     
-
     //  if it exsists in the choosen word...
-    if(choosenWord.indexOf(userGuesses) > -1){
+    
+    if (choosenWord.indexOf(userGuesses) > -1) {
 
-        for(var i = 0; i < choosenWord.length; i++){
+        for (var i = 0; i < choosenWord.length; i++) {
 
-            if(choosenWord[i] === userGuesses){
+            if (choosenWord[i] === userGuesses) {
 
                 underScores[i] = userGuesses;
-        
+
                 document.getElementById('spaceHolders').textContent = underScores.join(" ");
+               
                 winCount++;
-                winLose();
+            
             }
+            
         }
+        
+        winLose();
 
     }
-// if it doesnt then...
-    else{
-wrongLetter.push(userGuesses);
+    // if it doesnt then...
+    else {
+        wrongLetter.push(userGuesses);
 
-guessesLeft--;
+        guessesLeft--;
 
-console.log(guessesLeft);
+        console.log(guessesLeft);
 
-document.getElementById('guessLeft').textContent = guessesLeft;
+        document.getElementById('guessLeft').textContent = guessesLeft;
 
-console.log(wrongLetter);
+        console.log(wrongLetter);
 
-document.getElementById('wrongGuess').textContent = wrongLetter;
-winLose();
+        document.getElementById('wrongGuess').textContent = wrongLetter;
+    
 
     }
-
+    
+    winLose();
 }
 
 startGame();
