@@ -16,6 +16,7 @@ var winCount = 0;
 function startGame() {
 
     // make an empty array
+    userGuesses = [];
     winCount = 0;
     underScores = [];
     guessesLeft = 10;
