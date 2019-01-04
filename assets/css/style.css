@@ -1,12 +1,12 @@
-
-
-#bgImage{
+#bgImage {
     background-image: url("images/backgroundmario.png");
-
-     
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.leftContainer{
+.leftContainer {
     background-color: #f8eded;
     width: 300px;
     float: left;
@@ -22,7 +22,7 @@
     padding-top: 5px;
 }
 
-h1{
+h1 {
     font-size: 40px;
     font-family: Righteous, sans-serif;
     color: #6b7482;
@@ -30,16 +30,14 @@ h1{
     margin-top: 1%;
 }
 
-#keyStart{
+#keyStart {
     font-size: 20px;
     font-family: Righteous, sans-serif;
     color: #6b7482;
     text-align: center;
-   
-    
 }
 
-.rightContainer{
+.rightContainer {
     background-color: #f8eded;
     width: 300px;
     float: right;
@@ -52,5 +50,5 @@ h1{
     font-family: Righteous, sans-serif;
     color: #6b7482;
     font-size: large;
-    padding:5px;
+    padding: 5px;
 }
